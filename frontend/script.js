@@ -17,9 +17,6 @@ function getTodos() {
     });
 }
 
-/*function saveToLocalStorage(todos) {
-  localStorage.setItem("todos", JSON.stringify(todos));
-}*/
 
 //displaying the todos
 function displayTodos(todos) {
@@ -31,17 +28,15 @@ function displayTodos(todos) {
     
     const title = document.createElement("button");
     title.classList.add("actual-title");
+    title.setAttribute("popovertarget", "task-popover");
     title.textContent = todo.title;
     titleDiv.appendChild(title);
 
-  
-    title.addEventListener("click", () => {
-      taskInput.setAttribute("data-todo-id", todo.todoId);
+    title.addEventListener("click", () =>{
+      document.getElementById('taskInput').setAttribute("data-todo-id", todo.todoId);
       displayTasks(todo.todoId);
-
-      taskPopover.style.display = "block";
-      displayTodo.style.filter = "blur(5px)";  
-    });
+      taskPopover.style.display="block";
+    })
 
     const editIcon = document.createElement("img");
     editIcon.classList.add("editIcon");
@@ -194,7 +189,7 @@ function taskKeyPressed(k){
   }
 }
 
-
+//hide popover
 document.addEventListener("click", (event) => {
   if (!taskPopover.contains(event.target) && !event.target.classList.contains("actual-title")) {
     taskPopover.style.display = "none"; 
