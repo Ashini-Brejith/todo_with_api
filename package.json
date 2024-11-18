@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@jetit/id": "^0.0.12",
+    "axios": "^1.7.7"
+  }
+}
