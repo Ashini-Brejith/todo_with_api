@@ -171,7 +171,7 @@ function addTaskInput() {
   }
 }
 
-//title added when enter is pressed
+//add title when enter is pressed
 document.getElementById('titleInput').addEventListener("keypress", titleKeyPressed);
 function titleKeyPressed(press){
   if(press.code ==="Enter" ){
@@ -180,7 +180,7 @@ function titleKeyPressed(press){
   }
 }
 
-//task added when enter key is pressed
+//add task when enter key is pressed
 document.getElementById('taskInput').addEventListener("keypress", taskKeyPressed);
 function taskKeyPressed(k){
   if(k.code ==='Enter'){
@@ -189,7 +189,7 @@ function taskKeyPressed(k){
   }
 }
 
-//hide popover
+//hide popover when clicked outside
 document.addEventListener("click", (event) => {
   if (!taskPopover.contains(event.target) && !event.target.classList.contains("actual-title")) {
     taskPopover.style.display = "none"; 
