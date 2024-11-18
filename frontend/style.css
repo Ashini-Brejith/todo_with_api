@@ -144,6 +144,5 @@ body{
 }
 
 .actual-title:hover{
-    background-color: rgba(122, 219, 249, 0.2);
-    backdrop-filter: blur(3px);
+    text-decoration-line: underline;
 }
